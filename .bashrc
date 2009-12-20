@@ -227,6 +227,11 @@ if test -z "$BASH_COMPLETION" ; then
     unset bash bmajor bminor
 fi
 
+# enable git completion
+if [ -f ~/.git_completion ]; then
+    . ~/.git_completion
+fi
+
 # override and disable tilde expansion
 _expand() {
     return 0
