@@ -60,6 +60,10 @@ PATH="/usr/local/bin:$PATH"
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
 
+# put ~/.gem/ruby/1.8/bin on PATH if you have it
+test -d "$HOME/.gem/ruby/1.8/bin" &&
+PATH="$HOME/.gem/ruby/1.8/bin:$PATH"
+
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
