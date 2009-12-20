@@ -102,11 +102,17 @@ HISTCONTROL=ignoreboth
 # See what we have to work with ...
 HAVE_VIM=$(command -v vim)
 HAVE_GVIM=$(command -v gvim)
+HAVE_TEXTMATE=$(command -v mate)
 
 # EDITOR
-test -n "$HAVE_VIM" &&
-EDITOR=vim ||
-EDITOR=vi
+if test -n "$HAVE_TEXTMATE" ; then
+    alias mate_wait="mate"
+    EDITOR=mate_wait
+elif test -n "$HAVE_VIM" ; then
+    EDITOR=vim
+else
+    EDITOR=vi
+fi
 export EDITOR
 
 # PAGER
