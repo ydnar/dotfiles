@@ -125,6 +125,8 @@ export PAGER MANPAGER
 
 RED="\[\033[0;31m\]"
 BROWN="\[\033[0;33m\]"
+CYAN="\[\e[01;36m\]"
+GREEN="\[\e[01;32m\]"
 GREY="\[\033[0;97m\]"
 BLUE="\[\033[0;34m\]"
 PS_CLEAR="\[\033[0m\]"
@@ -159,6 +161,11 @@ prompt_compact() {
 
 prompt_color() {
     PS1="${GREY}[${COLOR1}\u${GREY}@${COLOR2}\h${GREY}:${COLOR1}\W${GREY}]${COLOR2}$P${PS_CLEAR} "
+    PS2="\[[33;1m\]continue \[[0m[1m\]> "
+}
+
+prompt_color_git() {
+    PS1="${GREEN}\u@\h${CYAN} \w \$(__git_ps1 '(%s) ')\$${PS_CLEAR} "
     PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
@@ -288,7 +295,7 @@ test -r ~/.shenv &&
 
 # Use the color prompt by default when interactive
 test -n "$PS1" &&
-prompt_color
+prompt_color_git
 
 # -------------------------------------------------------------------
 # MOTD / FORTUNE
