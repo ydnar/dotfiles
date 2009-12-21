@@ -216,6 +216,13 @@ fi
 alias du1='du -h --max-depth=1'
 alias fn='find . -name'
 alias hi='history | tail -20'
+alias pg="ps ax | grep -v grep | grep -i "
+alias ip="ifconfig | grep 'inet '"
+alias empties="find . -empty -type d -maxdepth 2"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # ----------------------------------------------------------------------
 # BASH COMPLETION
