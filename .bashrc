@@ -103,11 +103,13 @@ HISTCONTROL=ignoreboth
 HAVE_VIM=$(command -v vim)
 HAVE_GVIM=$(command -v gvim)
 HAVE_TEXTMATE=$(command -v mate)
+HAVE_MATE_WAIT=$(command -v mate_wait)
 
 # EDITOR
-if test -n "$HAVE_TEXTMATE" ; then
-    alias mate_wait="mate"
+if test -n "$HAVE_MATE_WAIT" ; then
     EDITOR=mate_wait
+elif test -n "$HAVE_TEXTMATE" ; then
+    EDITOR=mate
 elif test -n "$HAVE_VIM" ; then
     EDITOR=vim
 else
