@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# ----------------------------------------------------------------------
+# GIT ALIASES / FUNCTIONS
+# ----------------------------------------------------------------------
+
+alias ch="git diff -M | mate"
+alias chc="git diff --cached -M | mate"
+alias grm="git status | grep 'deleted:' | sed -e 's/^#.deleted: *//' | xargs -n1 git rm"
+alias gum="git add-unmerged"
+alias gb='git branch -a -v'
+alias gci='git commit -v'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gcia='git commit -v -a'
+alias gs='git status'
+alias gch="git log ORIG_HEAD.. --stat --no-merges"
+
+function gco {
+  if [ -z "$1" ]; then
+    git checkout master
+  else
+    git checkout $1
+  fi
+}
