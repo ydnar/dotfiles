@@ -173,7 +173,7 @@ prompt_color() {
 }
 
 prompt_color_git() {
-    PS1="${GREEN}\u@\h${CYAN} \w \$(__git_ps1 '(%s) ')\$${PS_CLEAR} "
+    PS1="${GREEN}\u@\h${CYAN} \w \$(__git_ps1 '(%s) ')$P${PS_CLEAR} "
     PS2="\[[33;1m\]continue \[[0m[1m\]> "
 }
 
