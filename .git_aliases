@@ -4,8 +4,8 @@
 # GIT ALIASES / FUNCTIONS
 # ----------------------------------------------------------------------
 
-alias ch="git diff -M | mate"
-alias chc="git diff --cached -M | mate"
+alias ch="git diff -M | ${EDITOR}"
+alias chc="git diff --cached -M | ${EDITOR}"
 alias grm="git status | grep 'deleted:' | sed -e 's/^#.deleted: *//' | xargs -n1 git rm"
 alias gum="git add-unmerged"
 alias gb='git branch -a -v'
