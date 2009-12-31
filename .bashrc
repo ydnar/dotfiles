@@ -208,6 +208,14 @@ if [ "$UNAME" = Darwin ]; then
     test -d /opt/jruby &&
     JRUBY_HOME="/opt/jruby"
     export JRUBY_HOME
+
+    # setup scala environment
+    test -x /usr/local/scala && {
+      SCALA_HOME=/usr/local/scala
+      PATH="$SCALA_HOME/bin:$PATH"
+      MANPATH="$SCALA_HOME/man:$MANPATH"
+      export SCALA_PATH
+    }
 fi
 
 # ----------------------------------------------------------------------
