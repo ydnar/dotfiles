@@ -56,6 +56,10 @@ umask 0022
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:$PATH"
 
+# put MySQL on PATH if you have it
+test -d "/usr/local/mysql/bin" &&
+PATH="/usr/local/mysql/bin:$PATH"
+
 # put ~/bin on PATH if you have it
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
