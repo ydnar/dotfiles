@@ -20,13 +20,8 @@ cat <<EOF > $html_file
   <style type="text/css">
     body {
       line-height: 1.7;
-      text-align:  center;
       font-size:   125%;
-    }
-    div#container {
-      max-width:  42em;
-      margin:     4em auto;
-      text-align: left;
+      font: normal 14px/20px helvetica;
     }
     hr {
       border: 0px;
@@ -44,14 +39,11 @@ cat <<EOF > $html_file
     code { color: #070 }
     pre code { color: #000 }
     blockquote { font-style: normal ; color: #333 }
-    h1 { text-align: center }
   </style>
   <body>
-    <div id="container">
 EOF
 cat $f | markdown | smarty >> $html_file
 cat <<EOF >> $html_file
-    </div>
   </body>
 </html>
 EOF
