@@ -15,6 +15,8 @@ alias gcb='git checkout -b'
 alias gcia='git commit -v -a'
 alias gs='git status'
 alias gch="git log ORIG_HEAD.. --stat --no-merges"
+alias gap="git add --patch"
+alias gps="git pull && git submodule update --init"
 
 function gco {
   if [ -z "$1" ]; then
