@@ -351,3 +351,10 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 }
 
 # vim: ts=4 sts=4 shiftwidth=4 expandtab
+
+# -------------------------------------------------------------------
+# Ruby Version Manager (RVM)
+# -------------------------------------------------------------------
+
+test ~/.rvm/scripts/rvm &&
+. ~/.rvm/scripts/rvm
