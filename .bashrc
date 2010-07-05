@@ -329,6 +329,9 @@ saa() {
   ssh-add ~/.ssh/id_rsa
 }
 
+# SSH Agent Socket
+export SSH_AUTH_SOCK=$(ls -1t $(find /tmp/* -type s -name 'Listeners' 2>/dev/null) | head -n 1)
+
 # -------------------------------------------------------------------
 # USER SHELL ENVIRONMENT
 # -------------------------------------------------------------------
