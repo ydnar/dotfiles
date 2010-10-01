@@ -359,4 +359,5 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 # Ruby Version Manager (RVM)
 # -------------------------------------------------------------------
 
-[[ -s "~/.rvm/scripts/rvm" ]] && source "~/.rvm/scripts/rvm"
+[[ -s ~/.rvm/scripts/rvm ]] &&
+. ~/.rvm/scripts/rvm
