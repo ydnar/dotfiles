@@ -263,7 +263,7 @@ __git_refs ()
 		*)
 			if [ -e "$dir/HEAD" ]; then echo HEAD; fi
 			format="refname:short"
-			refs="refs/tags refs/heads refs/remotes"
+			refs="refs/heads refs/remotes"
 			;;
 		esac
 		git --git-dir="$dir" for-each-ref --format="%($format)" \
