@@ -19,9 +19,13 @@ cat <<EOF > $html_file
   <title>$f</title>
   <style type="text/css">
     body {
-      line-height: 1.7;
-      font-size:   125%;
-      font: normal 14px/20px helvetica;
+      font: 200 14px/20px "helvetica neue", helvetica, sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 200;
+    }
+    strong, b {
+      font-weight: 500;
     }
     hr {
       border: 0px;
