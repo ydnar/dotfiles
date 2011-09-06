@@ -68,6 +68,10 @@ PATH="$HOME/bin:$PATH"
 test -d "$HOME/.gem/ruby/1.8/bin" &&
 PATH="$HOME/.gem/ruby/1.8/bin:$PATH"
 
+# Node.js
+test -d "/usr/local/bin/node" &&
+NODE_PATH="/usr/local/lib/node_modules"
+
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
