@@ -71,6 +71,14 @@ PATH="$HOME/.gem/ruby/1.8/bin:$PATH"
 # Node.js
 NODE_PATH="/usr/local/lib/node_modules"
 export NODE_PATH
+test -d "/usr/local/share/npm/bin" &&
+PATH="/usr/local/share/npm/bin:$PATH"
+
+# Go
+GOPATH="$HOME/go"
+export GOPATH
+test -d "$GOPATH/bin" &&
+PATH="$GOPATH/bin:$PATH"
 
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
