@@ -368,8 +368,10 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 # vim: ts=4 sts=4 shiftwidth=4 expandtab
 
 # -------------------------------------------------------------------
-# Ruby Version Manager (RVM)
+# rvm & rbenv
 # -------------------------------------------------------------------
 
 [[ -s ~/.rvm/scripts/rvm ]] &&
 . ~/.rvm/scripts/rvm
+
+which rbenv && eval "$(rbenv init -)"
