@@ -385,3 +385,6 @@ which rbenv && eval "$(rbenv init -)"
 
 # The next line enables bash completion for gcloud.
 . ~/google-cloud-sdk/completion.bash.inc
+
+# goapp for App Engine
+alias goapp=~/google-cloud-sdk/platform/google_appengine/goapp
