@@ -375,3 +375,13 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 . ~/.rvm/scripts/rvm
 
 which rbenv && eval "$(rbenv init -)"
+
+# -------------------------------------------------------------------
+# Google Cloud
+# -------------------------------------------------------------------
+
+# The next line updates PATH for the Google Cloud SDK.
+. ~/google-cloud-sdk/path.bash.inc
+
+# The next line enables bash completion for gcloud.
+. ~/google-cloud-sdk/completion.bash.inc
