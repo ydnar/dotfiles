@@ -198,6 +198,10 @@ prompt_color_git() {
 # ----------------------------------------------------------------------
 
 if [ "$UNAME" = Darwin ]; then
+    # XCode and iOS Simulator
+    XCODE_PATH=`xcode-select -p`
+    alias simulator="open $XCODE_PATH/Applications/iOS\ Simulator.app"
+
     # put ports on the paths if /opt/local exists
     test -x /opt/local && {
         PORTS=/opt/local
