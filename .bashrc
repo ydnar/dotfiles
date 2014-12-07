@@ -75,10 +75,10 @@ test -d "/usr/local/share/npm/bin" &&
 PATH="/usr/local/share/npm/bin:$PATH"
 
 # Go
+test -d "/usr/local/go/bin" && PATH="/usr/local/go/bin:$PATH"
 GOPATH="$HOME/go"
 export GOPATH
-test -d "$GOPATH/bin" &&
-PATH="$GOPATH/bin:$PATH"
+test -d "$GOPATH/bin" && PATH="$GOPATH/bin:$PATH"
 
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
