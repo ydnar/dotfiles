@@ -80,6 +80,10 @@ GOPATH="$HOME/go"
 export GOPATH
 test -d "$GOPATH/bin" && PATH="$GOPATH/bin:$PATH"
 
+# rbenv
+test -d "$HOME/.rbenv/bin" &&
+PATH="$HOME/.rbenv/bin:$PATH"
+
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
@@ -379,16 +383,17 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 . ~/.rvm/scripts/rvm
 
 which rbenv && eval "$(rbenv init -)"
+test
 
 # -------------------------------------------------------------------
 # Google Cloud
 # -------------------------------------------------------------------
+
+# goapp for App Engine
+alias goapp=~/google-cloud-sdk/platform/google_appengine/goapp
 
 # The next line updates PATH for the Google Cloud SDK.
 . ~/google-cloud-sdk/path.bash.inc
 
 # The next line enables bash completion for gcloud.
 . ~/google-cloud-sdk/completion.bash.inc
-
-# goapp for App Engine
-alias goapp=~/google-cloud-sdk/platform/google_appengine/goapp
