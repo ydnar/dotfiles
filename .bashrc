@@ -397,3 +397,9 @@ alias goapp=~/google-cloud-sdk/platform/google_appengine/goapp
 
 # The next line enables bash completion for gcloud.
 . ~/google-cloud-sdk/completion.bash.inc
+
+# -------------------------------------------------------------------
+# Heroku
+# -------------------------------------------------------------------
+
+export PATH="/usr/local/heroku/bin:$PATH"
