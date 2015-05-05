@@ -124,9 +124,12 @@ HAVE_VIM=$(command -v vim)
 HAVE_GVIM=$(command -v gvim)
 HAVE_TEXTMATE=$(command -v mate)
 HAVE_MATE_WAIT=$(command -v mate_wait)
+HAVE_SUBL=$(command -v subl)
 
 # EDITOR
-if test -n "$HAVE_MATE_WAIT" ; then
+if test -n "$HAVE_SUBL" ; then
+    EDITOR=subl
+elif test -n "$HAVE_MATE_WAIT" ; then
     EDITOR=mate_wait
 elif test -n "$HAVE_TEXTMATE" ; then
     EDITOR=mate
@@ -382,8 +385,7 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 [[ -s ~/.rvm/scripts/rvm ]] &&
 . ~/.rvm/scripts/rvm
 
-which rbenv && eval "$(rbenv init -)"
-test
+test -e rbenv && eval "$(rbenv init -)"
 
 # -------------------------------------------------------------------
 # Google Cloud
