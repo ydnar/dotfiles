@@ -385,7 +385,7 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 [[ -s ~/.rvm/scripts/rvm ]] &&
 . ~/.rvm/scripts/rvm
 
-test -e rbenv && eval "$(rbenv init -)"
+which -s rbenv && eval "$(rbenv init -)"
 
 # -------------------------------------------------------------------
 # Google Cloud
