@@ -405,3 +405,10 @@ alias goapp=~/google-cloud-sdk/platform/google_appengine/goapp
 # -------------------------------------------------------------------
 
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# -------------------------------------------------------------------
+# got-your-back
+# https://github.com/jay0lee/got-your-back
+# -------------------------------------------------------------------
+
+alias gyb="python ~/got-your-back/gyb.py"
