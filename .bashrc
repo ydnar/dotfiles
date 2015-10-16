@@ -125,9 +125,12 @@ HAVE_GVIM=$(command -v gvim)
 HAVE_TEXTMATE=$(command -v mate)
 HAVE_MATE_WAIT=$(command -v mate_wait)
 HAVE_SUBL=$(command -v subl)
+HAVE_SUB=$(command -v sub)
 
 # EDITOR
-if test -n "$HAVE_SUBL" ; then
+if test -n "$HAVE_SUB" ; then
+    EDITOR=sub
+elif test -n "$HAVE_SUBL" ; then
     EDITOR=subl
 elif test -n "$HAVE_MATE_WAIT" ; then
     EDITOR=mate_wait
