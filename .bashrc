@@ -126,9 +126,12 @@ HAVE_TEXTMATE=$(command -v mate)
 HAVE_MATE_WAIT=$(command -v mate_wait)
 HAVE_SUBL=$(command -v subl)
 HAVE_SUB=$(command -v sub)
+HAVE_CODE=$(command -v code)
 
 # EDITOR
-if test -n "$HAVE_SUB" ; then
+if test -n "$HAVE_CODE" ; then
+    EDITOR=code
+elif test -n "$HAVE_SUB" ; then
     EDITOR=sub
 elif test -n "$HAVE_SUBL" ; then
     EDITOR=subl
