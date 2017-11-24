@@ -84,6 +84,10 @@ test -d "$GOPATH/bin" && PATH="$GOPATH/bin:$PATH"
 test -d "$HOME/.rbenv/bin" &&
 PATH="$HOME/.rbenv/bin:$PATH"
 
+# Homebrew QT
+test -d "/usr/local/opt/qt/bin" &&
+PATH="/usr/local/opt/qt/bin:$PATH"
+
 # ----------------------------------------------------------------------
 # ENVIRONMENT CONFIGURATION
 # ----------------------------------------------------------------------
@@ -251,6 +255,9 @@ if [ "$UNAME" = Darwin ]; then
     }
 fi
 
+# iTerm
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
 # ----------------------------------------------------------------------
 # ALIASES / FUNCTIONS
 # ----------------------------------------------------------------------
@@ -398,13 +405,13 @@ which -s rbenv && eval "$(rbenv init -)"
 # -------------------------------------------------------------------
 
 # goapp for App Engine
-alias goapp=~/google-cloud-sdk/platform/google_appengine/goapp
+alias goapp=~/bin/google-cloud-sdk/platform/google_appengine/goapp
 
 # The next line updates PATH for the Google Cloud SDK.
-. ~/google-cloud-sdk/path.bash.inc
+. ~/bin/google-cloud-sdk/path.bash.inc
 
 # The next line enables bash completion for gcloud.
-. ~/google-cloud-sdk/completion.bash.inc
+. ~/bin/google-cloud-sdk/completion.bash.inc
 
 # -------------------------------------------------------------------
 # Heroku
