@@ -237,9 +237,16 @@ if [ "$UNAME" = Darwin ]; then
     }
 
     # setup java environment. puke.
-    JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+    JAVA_HOME=`/usr/libexec/java_home`
     ANT_HOME="/Developer/Java/Ant"
     export ANT_HOME JAVA_HOME
+
+    # Android Studio
+    export ANDROID_HOME=$HOME/Library/Android/sdk
+    PATH=$PATH:$ANDROID_HOME/emulator
+    PATH=$PATH:$ANDROID_HOME/tools
+    PATH=$PATH:$ANDROID_HOME/tools/bin
+    PATH=$PATH:$ANDROID_HOME/platform-tools
 
     # hold jruby's hand
     test -d /opt/jruby &&
