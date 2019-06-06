@@ -1,4 +1,3 @@
-#!/bin/bash
 # A basically sane bash environment.
 #
 # Ryan Tomayko <http://tomayko.com/about> (with help from the internets).
@@ -12,32 +11,26 @@
 # CONFIGURATION
 # ----------------------------------------------------------------------
 
+# completions
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+
 # complete hostnames from
 : ${HOSTFILE=~/.ssh/known_hosts}
 
 # readline inputrc
 : ${INPUTRC=~/.inputrc}
 
-
 # ----------------------------------------------------------------------
 #  SHELL OPTIONS
 # ----------------------------------------------------------------------
 
-# bring in system bashrc
-test -r /etc/bashrc &&
-      . /etc/bashrc
+# bring in system zshrc
+test -r /etc/zshrc &&
+      . /etc/zshrc
 
 # notify of bg job completion immediately
 set -o notify
-
-# shell opts. see bash(1) for details
-shopt -s cdspell >/dev/null 2>&1
-shopt -s extglob >/dev/null 2>&1
-shopt -s histappend >/dev/null 2>&1
-shopt -s hostcomplete >/dev/null 2>&1
-shopt -s interactive_comments >/dev/null 2>&1
-shopt -u mailwarn >/dev/null 2>&1
-shopt -s no_empty_cmd_completion >/dev/null 2>&1
 
 # fuck that you have new mail shit
 unset MAILCHECK
@@ -164,51 +157,8 @@ export PAGER MANPAGER
 # PROMPT
 # ----------------------------------------------------------------------
 
-RED="\[\033[0;31m\]"
-BROWN="\[\033[0;33m\]"
-CYAN="\[\e[01;36m\]"
-GREEN="\[\e[01;32m\]"
-GREY="\[\033[0;97m\]"
-BLUE="\[\033[0;34m\]"
-PS_CLEAR="\[\033[0m\]"
-SCREEN_ESC="\[\033k\033\134\]"
-
-if [ "$LOGNAME" = "root" ]; then
-    COLOR1="${RED}"
-    COLOR2="${BROWN}"
-    P="#"
-elif hostname | grep -q 'squareup\.com'; then
-    SQUARE=yep
-    COLOR1="\[\e[0;94m\]"
-    COLOR2="\[\e[0;92m\]"
-    P="\$"
-else
-    COLOR1="${BLUE}"
-    COLOR2="${BROWN}"
-    P="\$"
-fi
-
-prompt_simple() {
-    unset PROMPT_COMMAND
-    PS1="[\u@\h:\w]\$ "
-    PS2="> "
-}
-
-prompt_compact() {
-    unset PROMPT_COMMAND
-    PS1="${COLOR1}${P}${PS_CLEAR} "
-    PS2="> "
-}
-
-prompt_color() {
-    PS1="${GREY}[${COLOR1}\u${GREY}@${COLOR2}\h${GREY}:${COLOR1}\W${GREY}]${COLOR2}$P${PS_CLEAR} "
-    PS2="\[[33;1m\]continue \[[0m[1m\]> "
-}
-
-prompt_color_git() {
-    PS1="${GREEN}\u@\h${CYAN} \w \$(__git_ps1 '(%s) ')$P${PS_CLEAR} "
-    PS2="\[[33;1m\]continue \[[0m[1m\]> "
-}
+autoload -U promptinit; promptinit
+prompt pure
 
 # ----------------------------------------------------------------------
 # MACOS X / DARWIN SPECIFIC
@@ -262,9 +212,6 @@ if [ "$UNAME" = Darwin ]; then
     }
 fi
 
-# iTerm
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
 # ----------------------------------------------------------------------
 # ALIASES / FUNCTIONS
 # ----------------------------------------------------------------------
@@ -281,50 +228,13 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
 fi
 
 if [ -f ~/.git_aliases ]; then
     . ~/.git_aliases
 fi
-
-if [ -f ~/.rails_aliases ]; then
-    . ~/.rails_aliases
-fi
-
-# ----------------------------------------------------------------------
-# BASH COMPLETION
-# ----------------------------------------------------------------------
-
-if test -z "$BASH_COMPLETION" ; then
-    bash=${BASH_VERSION%.*}; bmajor=${bash%.*}; bminor=${bash#*.}
-    if [ "$PS1" ] && [ $bmajor -gt 1 ] ; then
-        # search for a bash_completion file to source
-        for f in /usr/pkg/etc/back_completion \
-            /usr/local/etc/bash_completion \
-            /opt/local/etc/bash_completion \
-            /etc/bash_completion \
-            ~/.bash_completion ;
-        do
-            test -f $f && {
-                . $f
-                break
-            }
-        done
-    fi
-    unset bash bmajor bminor
-fi
-
-# enable git completion
-if [ -f ~/.git_completion ]; then
-    . ~/.git_completion
-fi
-
-# override and disable tilde expansion
-_expand() {
-    return 0
-}
 
 # ----------------------------------------------------------------------
 # LS AND DIRCOLORS
@@ -383,10 +293,6 @@ export SSH_AUTH_SOCK=$(ls -1t $(find /tmp/* -type s -name 'Listeners' 2>/dev/nul
 test -r ~/.shenv &&
 . ~/.shenv
 
-# Use the color prompt by default when interactive
-test -n "$PS1" &&
-prompt_color_git
-
 # -------------------------------------------------------------------
 # MOTD / FORTUNE
 # -------------------------------------------------------------------
@@ -415,10 +321,10 @@ which -s rbenv && eval "$(rbenv init -)"
 alias goapp=~/bin/google-cloud-sdk/platform/google_appengine/goapp
 
 # The next line updates PATH for the Google Cloud SDK.
-. ~/bin/google-cloud-sdk/path.bash.inc
+. ~/bin/google-cloud-sdk/path.zsh.inc
 
 # The next line enables bash completion for gcloud.
-. ~/bin/google-cloud-sdk/completion.bash.inc
+. ~/bin/google-cloud-sdk/completion.zsh.inc
 
 # -------------------------------------------------------------------
 # Heroku
