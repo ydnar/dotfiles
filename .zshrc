@@ -160,6 +160,12 @@ export PAGER MANPAGER
 autoload -U promptinit; promptinit
 prompt pure
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 # ----------------------------------------------------------------------
 # MACOS X / DARWIN SPECIFIC
 # ----------------------------------------------------------------------
@@ -244,15 +250,15 @@ fi
 LS_COMMON="-hBG"
 
 # if the dircolors utility is available, set that up to
-dircolors="$(type -P gdircolors dircolors | head -1)"
-test -n "$dircolors" && {
-    COLORS=/etc/DIR_COLORS
-    test -e "/etc/DIR_COLORS.$TERM"   && COLORS="/etc/DIR_COLORS.$TERM"
-    test -e "$HOME/.dircolors"        && COLORS="$HOME/.dircolors"
-    test ! -e "$COLORS"               && COLORS=
-    eval `$dircolors --sh $COLORS`
-}
-unset dircolors
+# dircolors="$(type -P gdircolors dircolors | head -1)"
+# test -n "$dircolors" && {
+#     COLORS=/etc/DIR_COLORS
+#     test -e "/etc/DIR_COLORS.$TERM"   && COLORS="/etc/DIR_COLORS.$TERM"
+#     test -e "$HOME/.dircolors"        && COLORS="$HOME/.dircolors"
+#     test ! -e "$COLORS"               && COLORS=
+#     eval `$dircolors --sh $COLORS`
+# }
+# unset dircolors
 
 # setup the main ls alias if we've established common args
 test -n "$LS_COMMON" &&
@@ -305,13 +311,18 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 # vim: ts=4 sts=4 shiftwidth=4 expandtab
 
 # -------------------------------------------------------------------
-# rvm & rbenv
+# Ruby
 # -------------------------------------------------------------------
 
-[[ -s ~/.rvm/scripts/rvm ]] &&
-. ~/.rvm/scripts/rvm
+# [[ -s ~/.rvm/scripts/rvm ]] &&
+# . ~/.rvm/scripts/rvm
 
-which -s rbenv && eval "$(rbenv init -)"
+# which -s rbenv >> /dev/null && eval "$(rbenv init -)"
+
+# test -d /usr/local/opt/chruby && {
+#     source /usr/local/opt/chruby/share/chruby/chruby.sh
+#     source /usr/local/share/chruby/auto.sh
+# }
 
 # -------------------------------------------------------------------
 # Google Cloud
