@@ -5,8 +5,9 @@ tap "homebrew/services"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
+brew "mas"
 
-# Core
+# Git
 brew "git"
 brew "hub"
 
@@ -44,8 +45,12 @@ brew "pngcrush"
 cask "google-cloud-sdk"
 
 # Apps
+cask "1password"
+cask "dropbox"
 cask "google-chrome"
 cask "google-chrome-canary"
+cask "slack"
+cask "visual-studio-code"
 
 # Tools
 brew "autoconf"
@@ -57,7 +62,6 @@ brew "ffmpeg"
 brew "gawk"
 brew "gettext"
 brew "graphviz"
-brew "heroku"
 brew "jsonpp"
 brew "memcached"
 brew "pkg-config"
