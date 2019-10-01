@@ -328,27 +328,11 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 # Google Cloud
 # -------------------------------------------------------------------
 
-# goapp for App Engine
-alias goapp=~/bin/google-cloud-sdk/platform/google_appengine/goapp
-
 # The next line updates PATH for the Google Cloud SDK.
-. ~/bin/google-cloud-sdk/path.zsh.inc
+. /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 # The next line enables bash completion for gcloud.
-. ~/bin/google-cloud-sdk/completion.zsh.inc
-
-# -------------------------------------------------------------------
-# Heroku
-# -------------------------------------------------------------------
-
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# -------------------------------------------------------------------
-# got-your-back
-# https://github.com/jay0lee/got-your-back
-# -------------------------------------------------------------------
-
-alias gyb="python ~/got-your-back/gyb.py"
+. /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # -------------------------------------------------------------------
 # hub
