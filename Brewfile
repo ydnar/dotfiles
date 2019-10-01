@@ -5,6 +5,7 @@ tap "homebrew/services"
 tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
+tap "homebrew/cask-fonts"
 brew "mas"
 
 # Git
@@ -74,3 +75,9 @@ brew "terminal-notifier"
 brew "terraform"
 brew "translate-shell"
 brew "watch"
+
+# Fonts
+cask "font-anonymous-pro"
+cask "font-inconsolata"
+cask "font-input"
+cask "font-roboto"
