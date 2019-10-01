@@ -1,0 +1,29 @@
+[credential]
+	helper = osxkeychain
+[user]
+	name = Randy Reddig
+	email = ydnar@shaderlab.com
+[fetch]
+	prune = true
+	verbose = true
+[push]
+	default = simple
+[core]
+	editor = code --wait
+[alias]
+	ci = commit
+	co = checkout
+	dc = diff --cached
+	delete-gone-branches = "!f() { git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d; }; f"
+	delete-merged-branches = "!f() { git branch --merged ${1:-master} | grep -v ${1:-master}\\$ | xargs git branch -d; }; f"
+	fetch = fetch -p
+	lg = log --relative-date --graph  --oneline --decorate --all
+	lgb = log --relative-date --graph --oneline --decorate
+	pf = push origin +HEAD
+	pr = pull-request
+	publish = push origin -u HEAD
+	r = reset
+	rb = rebase
+	st = status --short --branch
+[http "https://gopkg.in"]
+	followRedirects = true
