@@ -26,6 +26,9 @@ brew "flow"
 # iOS
 brew "swiftformat"
 
+# Java
+cask "java"
+
 # Protobufs
 brew "clang-format"
 brew "protobuf"
@@ -49,6 +52,7 @@ cask "1password"
 cask "dropbox"
 cask "google-chrome"
 cask "google-chrome-canary"
+cask "iterm2-beta"
 cask "slack"
 cask "visual-studio-code"
 
