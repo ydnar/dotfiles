@@ -56,6 +56,7 @@ cask "google-chrome"
 cask "google-chrome-canary"
 cask "iterm2-beta"
 cask "slack"
+cask "sonos"
 cask "visual-studio-code"
 
 # Tools
