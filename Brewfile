@@ -51,6 +51,7 @@ cask "google-cloud-sdk"
 # Apps
 cask "1password"
 cask "dropbox"
+cask "figma"
 cask "google-chrome"
 cask "google-chrome-canary"
 cask "iterm2-beta"
