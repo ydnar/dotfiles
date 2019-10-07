@@ -80,6 +80,7 @@ brew "watch"
 
 # Fonts
 cask "font-anonymous-pro"
+cask "font-fira-code"
 cask "font-inconsolata"
 cask "font-input"
 cask "font-roboto"
