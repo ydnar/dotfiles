@@ -50,6 +50,7 @@ cask "google-cloud-sdk"
 
 # Apps
 cask "1password"
+cask "dash"
 cask "dropbox"
 cask "figma"
 cask "google-chrome"
