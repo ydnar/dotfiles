@@ -39,26 +39,8 @@ brew "grpcurl"
 # Docker
 cask "docker"
 
-# Audio
-brew "sox" # For the `play` command
-
-# Graphics
-brew "pngcrush"
-
 # Google Cloud
 cask "google-cloud-sdk"
-
-# Apps
-cask "1password"
-cask "dash"
-cask "dropbox"
-cask "figma"
-cask "google-chrome"
-cask "google-chrome-canary"
-cask "iterm2-beta"
-cask "slack"
-cask "sonos"
-cask "visual-studio-code"
 
 # Tools
 brew "autoconf"
@@ -73,7 +55,9 @@ brew "graphviz"
 brew "jsonpp"
 brew "memcached"
 brew "pkg-config"
+brew "pngcrush"
 brew "sqlite"
+brew "sox" # For the `play` command
 brew "terminal-notifier"
 brew "terraform"
 brew "translate-shell"
@@ -85,3 +69,16 @@ cask "font-fira-code"
 cask "font-inconsolata"
 cask "font-input"
 cask "font-roboto"
+
+# Apps
+cask "1password"
+cask "arq"
+cask "dash"
+cask "dropbox"
+cask "figma"
+cask "google-chrome"
+cask "google-chrome-canary"
+cask "iterm2-beta"
+cask "slack"
+cask "sonos"
+cask "visual-studio-code"
