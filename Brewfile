@@ -6,6 +6,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
+tap "heroku/brew"
 brew "mas"
 
 # Git
@@ -41,6 +42,9 @@ cask "docker"
 
 # Google Cloud
 cask "google-cloud-sdk"
+
+# Heroku
+brew "heroku"
 
 # Tools
 brew "autoconf"
