@@ -57,10 +57,6 @@ PATH="/usr/local/mysql/bin:$PATH"
 test -d "$HOME/bin" &&
 PATH="$HOME/bin:$PATH"
 
-# put ~/.gem/ruby/1.8/bin on PATH if you have it
-test -d "$HOME/.gem/ruby/1.8/bin" &&
-PATH="$HOME/.gem/ruby/1.8/bin:$PATH"
-
 # Node.js
 NODE_PATH="/usr/local/lib/node_modules"
 export NODE_PATH
@@ -72,10 +68,6 @@ test -d "/usr/local/go/bin" && PATH="/usr/local/go/bin:$PATH"
 GOPATH="$HOME/go"
 export GOPATH
 test -d "$GOPATH/bin" && PATH="$GOPATH/bin:$PATH"
-
-# rbenv
-test -d "$HOME/.rbenv/bin" &&
-PATH="$HOME/.rbenv/bin:$PATH"
 
 # Homebrew QT
 test -d "/usr/local/opt/qt/bin" &&
