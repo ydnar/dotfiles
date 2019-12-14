@@ -27,3 +27,5 @@
 	st = status --short --branch
 [http "https://gopkg.in"]
 	followRedirects = true
+[diff]
+	noprefix = true
