@@ -12,6 +12,7 @@ brew "mas"
 # Git
 brew "git"
 brew "hub"
+brew "gh"
 
 # Ruby
 brew "ruby"
