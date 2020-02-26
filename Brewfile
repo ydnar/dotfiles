@@ -26,9 +26,6 @@ brew "node"
 brew "yarn"
 brew "flow"
 
-# iOS
-brew "swiftformat"
-
 # Java
 cask "java"
 
