@@ -45,6 +45,10 @@ umask 0022
 # PATH
 # ----------------------------------------------------------------------
 
+# Homebrew provided Ruby
+test -d "/usr/local/opt/ruby/bin" &&
+PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # we want the various sbins on the path along with /usr/local/bin
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:$PATH"
@@ -327,8 +331,9 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
 . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # -------------------------------------------------------------------
-# hub
+# hub + GitHub CLI
 # https://hub.github.com
+# https://cli.github.com
 # -------------------------------------------------------------------
 
 alias git=hub
