@@ -45,13 +45,13 @@ umask 0022
 # PATH
 # ----------------------------------------------------------------------
 
-# Homebrew provided Ruby
-test -d "/usr/local/opt/ruby/bin" &&
-PATH="/usr/local/opt/ruby/bin:$PATH"
-
 # we want the various sbins on the path along with /usr/local/bin
 PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin"
 PATH="/usr/local/bin:$PATH"
+
+# put Homebrew Ruby on the path
+test -d "/usr/local/opt/ruby/bin" &&
+PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # put MySQL on PATH if you have it
 test -d "/usr/local/mysql/bin" &&
