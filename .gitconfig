@@ -14,6 +14,7 @@
 	delete-gone-branches = "!f() { git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d; }; f"
 	delete-merged-branches = "!f() { git branch --merged ${1:-master} | grep -v ${1:-master}\\$ | xargs git branch -d; }; f"
 	fetch = fetch -p
+	identity = "! git config user.name \"$(git config user.$1.name)\"; git config user.email \"$(git config user.$1.email)\"; git config user.signingkey \"$(git config user.$1.signingkey)\"; :"
 	lg = log --relative-date --graph  --oneline --decorate --all
 	lgb = log --relative-date --graph --oneline --decorate
 	pf = push origin +HEAD
@@ -28,3 +29,6 @@
 	followRedirects = true
 [diff]
 	noprefix = true
+
+[include]
+    path = ~/.gitidentities
