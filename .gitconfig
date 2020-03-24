@@ -1,8 +1,5 @@
 [credential]
 	helper = osxkeychain
-[user]
-	name = Randy Reddig
-	email = ydnar@shaderlab.com
 [fetch]
 	prune = true
 	verbose = true
@@ -20,7 +17,9 @@
 	lg = log --relative-date --graph  --oneline --decorate --all
 	lgb = log --relative-date --graph --oneline --decorate
 	pf = push origin +HEAD
-	pr = pull-request
+	pr = pull-request -a ydnar
+	pr-case = pull-request -a ydnar --reviewer case
+	pr-cw = pull-request -a ydnar --reviewer cee-dub
 	publish = push origin -u HEAD
 	r = reset
 	rb = rebase
