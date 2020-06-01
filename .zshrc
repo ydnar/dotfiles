@@ -66,6 +66,7 @@ NODE_PATH="/usr/local/lib/node_modules"
 export NODE_PATH
 test -d "/usr/local/share/npm/bin" &&
 PATH="/usr/local/share/npm/bin:$PATH"
+test -d "$HOME/.yarn/bin" && PATH="$HOME/.yarn/bin:$PATH"
 
 # Go
 test -d "/usr/local/go/bin" && PATH="/usr/local/go/bin:$PATH"
