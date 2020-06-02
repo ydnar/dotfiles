@@ -9,6 +9,9 @@ verbose = true
 [submodule]
 recurse = true
 
+[pull]
+rebase = true
+
 [push]
 default = simple
 
