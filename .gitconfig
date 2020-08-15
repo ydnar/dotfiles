@@ -51,3 +51,5 @@ required = true
 
 [include]
 path = ~/.gitidentities
+[init]
+	defaultBranch = main
